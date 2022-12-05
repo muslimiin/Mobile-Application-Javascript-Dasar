@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/onsenui.css">
+  <link rel="stylesheet" href="css/onsen-css-components.css">
+	<link rel="icon" type="image/png" href="res/ICON.jpg">
+	<title>APLIKASI DATA BATIK MANTAP</title>
+  <script src="js/onsenui.min.js"></script>	
+	<script>
+		ons.platform.select('android');
+	</script>
+</head>
+<body onload=load()>
+  <ons-page>
+    <ons-splitter id="appSplitter">
+      <ons-splitter-content page="tabbar.html"></ons-splitter-content>
+    </ons-splitter>
+  </ons-page>
+
+<template id="tabbar.html">
+  <ons-page id="tabbar-page">
+    <ons-toolbar>
+      <div class="center">Input Data</div>
+    </ons-toolbar>
+    <ons-tabbar swipeable id="appTabbar" position="auto">
+      <ons-tab label="Input Data" icon="md-home" page="home.html" active></ons-tab>
+      <ons-tab label="Data Produk" icon="md-book" page="data.html"></ons-tab>
+      <ons-tab label="Tentang Produk" icon="md-info" page="about.html"></ons-tab>
+    </ons-tabbar>
+
+    <script>
+      ons.getScriptPage().addEventListener('prechange', function(event) {
+        if (event.target.matches('#appTabbar')) {
+          event.currentTarget.querySelector('ons-toolbar .center').innerHTML = event.tabItem.getAttribute('label');
+        }
+      });
+    </script>
+  </ons-page>
+</template>
+
+<template id="home.html">
+  <ons-page>
+    <div style="text-align: left; margin-top: 20px;" >
+			<ons-list>
+				<ons-list-item>
+					<ons-row>
+						<ons-col width="50px">
+							<ons-icon icon="fa-tag" size='24px'></ons-icon>
+						</ons-col>
+						<ons-col width="150px">
+							<label>						
+								ID
+							</label>
+						</ons-col>
+						<ons-col>
+							<ons-input id="id" placeholder="ID Produk"></ons-input>
+						</ons-col>
+					</ons-row>
+				</ons-list-item>
+				<ons-list-item>
+					<ons-row>
+						<ons-col width="50px">
+							<ons-icon icon="fa-user" size='24px'></ons-icon>
+						</ons-col>
+						<ons-col width="150px">
+							<label>						
+								Nama
+							</label>
+						</ons-col>
+						<ons-col>
+							<ons-input id="nama" placeholder="Nama Produk"></ons-input>
+						</ons-col>
+					</ons-row>
+				</ons-list-item>
+				<ons-list-item>
+					<ons-row>
+						<ons-col width="50px">
+							<ons-icon icon="fa-calendar" size='24px'></ons-icon>
+						</ons-col>
+						<ons-col  width="150px">
+							<label>						
+								Tanggal Masuk
+							</label>
+						</ons-col>
+						<ons-col>
+							<ons-input id="tglmasuk" type="date" ></ons-input>
+						</ons-col>
+					</ons-row>
+				</ons-list-item>
+				<ons-list-item>
+					<ons-row>	
+						<ons-col width="50px">
+							<ons-icon icon="fa-venus-mars" size='24px'></ons-icon>
+						</ons-col>
+						<ons-col  width="150px">
+							<label>						
+								Jenis Produk
+							</label>
+						</ons-col>
+						<ons-col>
+							<ons-select id="jenis" class="select">
+								<option >-- Pilih Jenis Produk --</option>
+								<option >Batik Pria</option>
+								<option >Batik Wanita</option>
+								<option >Batik Anak-Anak</option>
+							</ons-select>
+						</ons-col>
+					</ons-row>
+				</ons-list-item>
+				<ons-list-item>
+					<ons-row>
+						<ons-col width="50px">
+							<ons-icon icon="fa-user" size='24px'></ons-icon>
+						</ons-col>
+						<ons-col width="150px">
+							<label>						
+								Jumlah
+							</label>
+						</ons-col>
+						<ons-col>
+							<ons-input id="jumlah" placeholder="Jumlah"></ons-input>
+						</ons-col>
+					</ons-row>
+				</ons-list-item>
+				<ons-list-item>
+					<ons-row>	
+						<ons-col width="50px">
+							<ons-icon icon="fa-medkit" size='24px'></ons-icon>
+						</ons-col>
+						<ons-col>
+							<label>						
+								Size Produk
+							</label>
+						</ons-col>
+					</ons-row>
+				</ons-list-item>
+				<ons-list-item>		
+					<ons-row>	
+						<ons-col width="50px">					
+						</ons-col>
+						<ons-col>
+							<label class="radio-button">
+								<input type="radio" class="radio-button__input" name="size" id="s">
+								<div class="radio-button__checkmark"></div>
+								Small
+							</label>
+						</ons-col>
+					</ons-row>
+				</ons-list-item>
+				<ons-list-item>
+					<ons-row>	
+						<ons-col width="50px">					
+						</ons-col>
+						<ons-col>
+							<label class="radio-button">
+								<input type="radio" class="radio-button__input" name="size" id="m">
+								<div class="radio-button__checkmark"></div>
+								Medium
+							</label>
+						</ons-col>
+					</ons-row>
+				</ons-list-item>
+				<ons-list-item>
+					<ons-row>	
+						<ons-col width="50px">					
+						</ons-col>
+						<ons-col>
+							<label class="radio-button">
+								<input type="radio" class="radio-button__input" name="size" id="l">
+								<div class="radio-button__checkmark"></div>
+								Large
+							</label>
+						</ons-col>
+					</ons-row>
+				</ons-list-item>
+				<ons-list-item>
+					<ons-row>	
+						<ons-col width="50px">					
+						</ons-col>
+						<ons-col>
+							<label class="radio-button">
+								<input type="radio" class="radio-button__input" name="size" id="xl">
+								<div class="radio-button__checkmark"></div>
+								Extra Large
+							</label>
+						</ons-col>
+					</ons-row>
+				</ons-list-item>				
+			</ons-list>
+				
+			<p style="text-align: center">
+				<ons-button onclick="tambah_data()">Simpan</ons-button>
+			</p>
+		</div>
+    
+  </ons-page>
+</template>
+
+<template id="data.html">
+  <ons-page id="forms-page">
+    <div class="card card--material">
+				<div class="card__content card--material__content">
+					<ons-list>
+						<ons-list-item>														
+							<div class="center">
+								<label><b>NAMA&emsp;&emsp;&emsp;JUMLAH&emsp;&emsp;&emsp;SIZE</b></label>
+							</div>
+							<div class="right">
+								<label><b>EDIT/DELETE</b></label>
+							</div>
+						</ons-list-item>
+						<div id="list_data">							
+						</div>
+					</ons-list>				
+				</div>
+			</div>
+  </ons-page>
+</template>
+
+<template id="about.html">
+  <ons-page>
+    <h2 class="intro">
+      Virus Corona
+    </h2>
+    <p>Virus Corona atau severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) adalah virus yang menyerang sistem pernapasan. Penyakit karena infeksi virus ini disebut COVID-19. Virus Corona bisa menyebabkan gangguan ringan pada sistem pernapasan, infeksi paru-paru yang berat, hingga kematian.<br><br>
+
+Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) yang lebih dikenal dengan nama virus Corona adalah jenis baru dari coronavirus yang menular ke manusia. Virus ini bisa menyerang siapa saja, seperti lansia (golongan usia lanjut), orang dewasa, anak-anak, dan bayi, termasuk ibu hamil dan ibu menyusui.<br><br>
+
+nfeksi virus Corona disebut COVID-19 (Corona Virus Disease 2019) dan pertama kali ditemukan di kota Wuhan, China pada akhir Desember 2019. Virus ini menular dengan sangat cepat dan telah menyebar ke hampir semua negara, termasuk Indonesia, hanya dalam waktu beberapa bulan.<br><br>
+
+Hal tersebut membuat beberapa negara menerapkan kebijakan untuk memberlakukan lockdown dalam rangka mencegah penyebaran virus Corona. Di Indonesia sendiri, diberlakukan kebijakan Pembatasan Sosial Berskala Besar (PSBB) untuk menekan penyebaran virus ini.<br><br>
+
+Coronavirus adalah kumpulan virus yang bisa menginfeksi sistem pernapasan. Pada banyak kasus, virus ini hanya menyebabkan infeksi pernapasan ringan, seperti flu. Namun, virus ini juga bisa menyebabkan infeksi pernapasan berat, seperti infeksi paru-paru (pneumonia).<br><br>
+
+Selain virus SARS-CoV-2 atau virus Corona, virus yang juga termasuk dalam kelompok ini adalah virus penyebab Severe Acute Respiratory Syndrome (SARS) dan virus penyebab Middle-East Respiratory Syndrome (MERS). Meski disebabkan oleh virus dari kelompok yang sama, yaitu coronavirus, COVID-19 memiliki beberapa perbedaan dengan SARS dan MERS, antara lain dalam hal kecepatan penyebaran dan keparahan gejala.</p>
+  </ons-page>
+</template>
+
+  <script src="js/app.js"></script>
+  <script src="js/jquery-3.1.1.min.js"></script>
+	  
+</body>
+</html>

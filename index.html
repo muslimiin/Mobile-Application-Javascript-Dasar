@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/onsenui.css">
+  <link rel="stylesheet" href="css/onsen-css-components.css">
+	<link rel="icon" type="image/png" href="res/ICON.jpg">
+	<title>LOGIN APLIKASI BATIK MANTAP</title>
+  <script src="js/onsenui.min.js"></script>	
+	<script>
+		ons.platform.select('android');
+	</script>
+</head>
+<body>
+	<ons-page>
+    <ons-toolbar>
+      <div class="center">LOGIN</div>
+    </ons-toolbar>
+		
+		<div style="text-align: left; margin-top: 20px;" >
+			<ons-list>
+				<ons-list-item>
+					<ons-row>
+						<ons-col width="150px">
+							<label>						
+								Username
+							</label>
+						</ons-col>
+						<ons-col>
+							<ons-input id="username" placeholder="Username"></ons-input>
+						</ons-col>
+					</ons-row>
+				</ons-list-item>
+				<ons-list-item>
+					<ons-row>
+						<ons-col width="150px">
+							<label>						
+								Password
+							</label>
+						</ons-col>
+						<ons-col>
+							<ons-input type="password" id="password" placeholder="Password"></ons-input>
+						</ons-col>
+					</ons-row>
+				</ons-list-item>												
+			</ons-list>
+				
+			<p style="text-align: center">
+				<ons-button onclick="login()">Login</ons-button>
+			</p>
+			                              
+		</div>
+
+  </ons-page>
+	<script src="js/login.js"></script>
+	  
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.mobile.pertemuan2"
+    versionCode = "10"
+    version     = "1.0.0" >
+
+  <name>APLIKASI DATA COVID-19</name>
+
+  <description>
+      TUGAS PRAKTEK MOBILE APPLICATION 1
+  </description>
+
+  <author href="" email="">
+      STMIK Widya Pratama
+  </author>
+	<icon src="res/icon2.jpg" />
+	
+	<plugin name="cordova-plugin-whitelist" version="1" />
+	
+	<access origin = "*" />
+	<allow-intent href="*" />
+	<allow-navigation href="*" />
+  
+  
+</widget>
